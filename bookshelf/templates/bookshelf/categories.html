@@ -1,0 +1,16 @@
+{% extends 'bookshelf/base.html' %}
+
+{% block content %}
+<a href="{% url 'index' %}">Home</a>
+<ul>
+    {% for category in categories %}
+        <li>
+            {{ category }}
+        </li>
+    {% empty %}
+        <li>
+            Não há categorias para exibir...
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
