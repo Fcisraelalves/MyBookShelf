@@ -1,0 +1,19 @@
+{% extends 'bookshelf/base.html' %}
+
+{% block content %}
+<a href="{% url 'index' %}">Home</a>
+<h2>Categoria: {{ category }}</h2>
+<ul>
+    {% for book in books %}
+        <li>
+            <p>
+                {{ book.title }} <br> {{ book.year }} | {{ book.author }}
+            </p>
+        </li>
+    {% empty %}
+        <li>
+            Não há livros para exibir...
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
